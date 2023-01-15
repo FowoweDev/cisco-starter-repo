@@ -1,21 +1,10 @@
-.App {
-  text-align: center;
-}
-
-.FancyBorder {
-  padding: 10px 10px;
-  border: 10px solid;
-}
-
-.FancyBorder-blue {
-  border-color: blue;
-}
-
-.Dialog-title {
+body{
+  padding: 0;
   margin: 0;
-  font-family: sans-serif;
 }
-
-.Dialog-message {
-  font-size: larger;
+.App {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
