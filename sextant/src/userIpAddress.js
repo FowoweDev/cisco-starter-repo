@@ -6,7 +6,7 @@ class PublicIPAddress extends Component {
     super(props);
     this.state = {
         url: props.url,
-        ipAddress
+        ipAddress: null
     };
   }
 
