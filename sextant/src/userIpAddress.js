@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
-function PublicIPAddress() {
-  const [ipAddress, setIPAddress] = useState('');
 
-  useEffect(() => {
-    fetch('https://api.ipify.org/?format=json')
+class PublicIPAddress extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        url: props.url,
+        ipAddress
+    };
+  }
+
+  componentDidMount() {
+    fetch(this.state.url)
       .then(response => response.json())
-      .then(data => setIPAddress(data.ip));
-  }, []);
+      .then(data => this.setState({ ipAddress: data.ip}));
+  }
 
-  return (
-    <div>
-      <p>Your public IP address is: {ipAddress}</p>
-    </div>
-  );
+  return (){
+    return (
+      <div className="PublicIpAddress">
+      <p>Your public IP address is: {this.state.ipAddress}</p>
+      </div>
+    );
+  }
+  
 }
 
 export default PublicIPAddress;
